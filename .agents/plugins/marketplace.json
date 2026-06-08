@@ -1,0 +1,20 @@
+{
+  "name": "falconer-agent-integrations",
+  "interface": {
+    "displayName": "Falconer Agent Integrations"
+  },
+  "plugins": [
+    {
+      "name": "falconer",
+      "source": {
+        "source": "local",
+        "path": "./plugins/falconer"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

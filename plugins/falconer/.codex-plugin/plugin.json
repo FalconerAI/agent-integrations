@@ -1,0 +1,32 @@
+{
+  "name": "falconer",
+  "version": "0.1.0",
+  "description": "Read, search, and update Falconer documents from Codex through hosted HTTP MCP.",
+  "author": {
+    "name": "Falconer AI",
+    "email": "support@falconer.com",
+    "url": "https://falconer.com"
+  },
+  "homepage": "https://falconer.com",
+  "repository": "https://github.com/FalconerAI/falconer-agent-integrations",
+  "license": "Apache-2.0",
+  "keywords": ["falconer", "mcp", "docs", "documents", "knowledge"],
+  "skills": "./skills",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Falconer",
+    "shortDescription": "Use Falconer documents from Codex.",
+    "longDescription": "Read, search, create, and update Falconer documents from Codex through Falconer's hosted HTTP MCP server.",
+    "developerName": "Falconer AI",
+    "category": "Productivity",
+    "capabilities": ["MCP", "Documents", "Knowledge"],
+    "websiteURL": "https://falconer.com",
+    "privacyPolicyURL": "https://falconer.com/privacy",
+    "brandColor": "#111827",
+    "defaultPrompt": [
+      "Search Falconer for onboarding docs.",
+      "Draft a Falconer project brief.",
+      "Update this Falconer doc safely."
+    ]
+  }
+}
