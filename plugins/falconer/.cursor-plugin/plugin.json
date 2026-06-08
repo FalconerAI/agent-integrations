@@ -1,0 +1,20 @@
+{
+  "name": "falconer",
+  "displayName": "Falconer",
+  "description": "Read, search, and update Falconer documents from Cursor through hosted HTTP MCP.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Falconer",
+    "email": "support@falconer.com"
+  },
+  "publisher": "Falconer",
+  "homepage": "https://falconer.com",
+  "repository": "https://github.com/FalconerAI/agent-integrations",
+  "license": "Apache-2.0",
+  "logo": "assets/logo.svg",
+  "keywords": ["falconer", "mcp", "docs", "documents", "knowledge"],
+  "category": "Productivity",
+  "tags": ["mcp", "documentation", "knowledge-management"],
+  "skills": "skills/**/SKILL.md",
+  "mcpServers": "mcp.json"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "agent-integrations",
+  "owner": {
+    "name": "Falconer",
+    "email": "support@falconer.com"
+  },
+  "metadata": {
+    "description": "Falconer hosted HTTP MCP integrations for AI agent clients."
+  },
+  "plugins": [
+    {
+      "name": "falconer",
+      "source": "./plugins/falconer",
+      "description": "Read, search, and update Falconer documents through hosted HTTP MCP."
+    }
+  ]
+}

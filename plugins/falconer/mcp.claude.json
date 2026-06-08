@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "falconer": {
+      "type": "http",
+      "url": "https://falconer.com/api/mcp",
+      "oauth": {
+        "clientId": "falconer-claude-code",
+        "callbackPort": 49152
+      }
+    }
+  }
+}

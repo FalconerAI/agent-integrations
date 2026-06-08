@@ -1,0 +1,19 @@
+{
+  "name": "agent-integrations",
+  "description": "Falconer hosted HTTP MCP plugins for Claude Code and Claude Cowork.",
+  "owner": {
+    "name": "Falconer",
+    "email": "support@falconer.com"
+  },
+  "plugins": [
+    {
+      "name": "falconer",
+      "source": "./plugins/falconer",
+      "description": "Use Falconer documents from Claude Code through hosted HTTP MCP.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Falconer"
+      }
+    }
+  ]
+}
