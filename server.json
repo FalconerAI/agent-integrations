@@ -1,0 +1,16 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.FalconerAI/agent-integrations",
+  "description": "MCP server giving AI coding agents trusted access to a company's living documentation.",
+  "repository": {
+    "url": "https://github.com/FalconerAI/agent-integrations",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://falconer.com/api/mcp"
+    }
+  ]
+}
