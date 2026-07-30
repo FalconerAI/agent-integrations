@@ -4,13 +4,21 @@ Falconer documents use Markdown plus Falconer-specific references and rich block
 
 ## References
 
-Preserve existing Falconer references exactly:
+Write new inline references as an anchor whose `data-id` is the Falconer reference id:
+
+```markdown
+<a href="link" data-id="reference-id">display name</a>
+```
+
+A plain anchor without `data-id` is an ordinary link, not a reference.
+Legacy references look like this:
 
 ```markdown
 ![f>][reference-id]
 ![f>][display text][reference-id]
 ```
 
+Replace legacy references with the anchor form, keeping the same reference-id.
 Do not invent new reference IDs. If a reference is needed and no ID exists, write normal text and ask the user or use available Falconer tools to find the referenced content.
 
 ## Headings

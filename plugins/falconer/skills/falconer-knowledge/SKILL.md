@@ -9,8 +9,8 @@ Use Falconer MCP tools to read, search, create, and update Falconer documents. F
 
 ## Core rules
 
-- Preserve inline references exactly: `![f>][reference-id]`.
-- Preserve legacy inline references exactly: `![f>][display text][reference-id]`.
+- Write new inline references as `<a href="link" data-id="reference-id">display name</a>`.
+- Replace legacy inline references (`![f>][reference-id]`, `![f>][display text][reference-id]`) with the anchor form, keeping the same reference-id.
 - Do not invent Falconer reference IDs.
 - Prefer targeted content tools over whole-document overwrite.
 - Use `upload_media` before inserting local image or video content.
