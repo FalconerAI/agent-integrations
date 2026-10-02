@@ -18,7 +18,7 @@ This repository intentionally does not document local stdio MCP installs. Client
 
 - Hosted HTTP MCP connection to `https://falconer.com/api/mcp`.
 - Agent guidance for reading, writing, and updating Falconer documents safely.
-- Falconer-specific Markdown and rich block formatting guidance.
+- Current formatting and component guidance loaded from the connected Falconer MCP server.
 - Marketplace/plugin metadata for Cursor, Claude Code, and Codex.
 
 ## Cursor
@@ -68,6 +68,19 @@ Add this repository as a Codex plugin marketplace and install the `falconer` plu
 
 Live Codex OAuth, install, `search`, and `read` smoke tests are still required before treating this package as supported.
 
+## Knowledge and document authoring
+
+The shared skill loads Falconer's knowledge catalog at runtime through `falconer_knowledge`.
+Call the tool with `{}` to list topics, then with `{"topic":"document-format"}` before drafting or editing document content.
+Load `document-components`, `html-components`, or `diagrams` before using those features.
+MCP resources expose the same catalog under `falconer://knowledge/` for clients that can attach resources as context.
+
+Formatting guidance is maintained by the Falconer server and is not bundled in this plugin.
+If the server cannot return a required guide, report the failure before attempting content that depends on it.
+
+The generic catalog is also available without workspace access through [the knowledge API](https://falconer.com/api/v1/knowledge) and [the document-format topic](https://falconer.com/api/v1/knowledge/content?topic=document-format).
+These endpoints contain product guidance only; hosted MCP connections still require authentication.
+
 ## Compatibility policy
 
 New clients are added only when all of the following are true:
@@ -75,6 +88,7 @@ New clients are added only when all of the following are true:
 - The client can connect directly to `https://falconer.com/api/mcp`.
 - Hosted HTTP OAuth works end to end.
 - `search` and `read` succeed in a smoke test.
+- `falconer_knowledge` can list topics and load the document-format guide.
 - Tool permission behavior is verified for write and admin tools.
 - The working path does not require local stdio.
 
