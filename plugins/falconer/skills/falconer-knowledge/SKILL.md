@@ -23,6 +23,8 @@ Load document-authoring guidance from the connected server before drafting or ed
 
 - Preserve existing references and rich document content unless the requested change requires modifying them.
 - Use only reference identifiers supplied by Falconer tools, as described in `document-format`.
+- Write new inline references as `<a href="link" data-id="reference-id">display name</a>`; a plain anchor without `data-id` is an ordinary link.
+- Replace legacy inline references (`![f>][reference-id]`, `![f>][display text][reference-id]`) with the anchor form, keeping the same reference-id.
 - Use ordinary links in replies to the external client; Falconer inline reference syntax belongs in Falconer document content.
 - Prefer targeted content tools over whole-document overwrite.
 - Use `upload_media` before inserting local image or video content.
