@@ -68,6 +68,33 @@ Add this repository as a Codex plugin marketplace and install the `falconer` plu
 
 Live Codex OAuth, install, `search`, and `read` smoke tests are still required before treating this package as supported.
 
+## OpenAI directory package
+
+The maintained OpenAI listing and review metadata are in [`plugins/falconer/.openai-plugin/plugin.json`](plugins/falconer/.openai-plugin/plugin.json).
+The OpenAI connection and packaged README come from [`mcp.openai.json`](plugins/falconer/mcp.openai.json) and [`README.openai.md`](plugins/falconer/README.openai.md).
+The `.openai-plugin` directory is this repository's build-input convention; the build exports its manifest as standard root `plugin.json`.
+Shared skills, assets, license and trademark files are included from their maintained source locations.
+
+From the repository root, build the uploadable ZIP in `dist`:
+
+```bash
+python3 scripts/build-openai-plugin.py
+```
+
+To also write versioned release snapshots under `submissions/openai/plugins`:
+
+```bash
+python3 scripts/build-openai-plugin.py --archive
+```
+
+The build includes only explicitly listed public input files; unlisted local files under assets or skills are excluded.
+Review new public assets or skills before adding them to the build mapping.
+The build uses fixed ZIP metadata for reproducibility and never reads an earlier archive as build input.
+It refuses to replace an archived version with different bytes; update the source manifest's version before archiving a changed package.
+Release folders contain generated snapshots, and future metadata changes belong in the maintained source manifest.
+Keep reviewer credentials outside the package, and run the review cases with the supplied account before final submission.
+Run the focused package-input regression with `python3 -m unittest discover -s tests`.
+
 ## Knowledge and document authoring
 
 The shared skill loads Falconer's knowledge catalog at runtime through `falconer_knowledge`.
@@ -95,6 +122,7 @@ New clients are added only when all of the following are true:
 ## Security
 
 Do not commit credentials, OAuth tokens, local MCP configuration, customer content, organization IDs, document IDs, screenshots containing private data, or local environment files to this repository.
+Keep local plans and audit evidence in the ignored `tasks/` directory.
 
 Report security issues through the process in [SECURITY.md](SECURITY.md).
 
